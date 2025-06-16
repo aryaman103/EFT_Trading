@@ -1,6 +1,4 @@
-# docs/README.md
-
-# FinSight Alpha-Lite
+# FinSight
 
 **End-to-end RL + RAG ETF trading demo**
 
@@ -17,40 +15,6 @@ finsight-alpha-lite/
 ├── tests/        # Pytest unit tests
 ├── docs/         # Documentation (this file)
 ```
-
----
-
-## Quickstart
-
-1. **Clone repo & set up .env**
-   - Copy `.env.example` to `.env` and fill in your `OPENAI_API_KEY` (or leave as stub for offline mode).
-
-2. **Build & run all services**
-   ```sh
-   cd infra
-   bash start.sh
-   ```
-   - This launches:
-     - `api` (FastAPI backend, RLlib PPO)
-     - `frontend` (React dashboard)
-     - `chromadb` (SQLite vector DB)
-
-3. **Access the dashboard**
-   - Open [http://localhost:5173](http://localhost:5173)
-
-4. **Run the data pipeline**
-   ```sh
-   cd ../backend
-   poetry run python data_pipeline.py
-   ```
-
-5. **Train the PPO agent**
-   ```sh
-   poetry run python trainer.py
-   ```
-
-6. **Backtest in notebook**
-   - Open `notebooks/backtest.ipynb` in Jupyter.
 
 ---
 
@@ -76,15 +40,3 @@ finsight-alpha-lite/
   ```sh
   poetry run pytest ../tests
   ```
-
----
-
-## Notes
-- For offline mode, GPT summary is stubbed.
-- ChromaDB runs in SQLite mode for easy local dev.
-- Extendable to more ETFs, news sources, or LLMs.
-
----
-
-## Authors
-- Quant/ML/Infra: [Your Name] 
