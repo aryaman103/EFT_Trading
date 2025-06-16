@@ -1,6 +1,7 @@
 # FinSight
 
-**End-to-end RL + RAG ETF trading demo**
+**FinSight** is an end-to-end demo project that integrates reinforcement learning (RL) and retrieval-augmented generation (RAG) to simulate intelligent ETF trading. Built to showcase how modern AI techniques can be combined for real-world financial applications, the project uses RLlib's PPO algorithm to train a custom Gymnasium environment to trade between two ETFs based on both price-based indicators and sentiment analysis. A lightweight RAG pipeline processes real-time RSS news, generates embeddings with MiniLM, stores them in ChromaDB, and summarizes with GPT before feeding sentiment into the agent's state. The backend is powered by FastAPI for predictions and live streaming, while the frontend offers a sleek Vite + React dashboard with real-time charts. FinSight exists as a compact but powerful demonstration of how multiple AI tools—RL, LLMs, vector stores, and web apps—can come together in a unified, Dockerized environment for rapid experimentation and learning.
+
 
 ---
 
