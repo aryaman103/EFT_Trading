@@ -1,0 +1,32 @@
+# backend/pyproject.toml
+[tool.poetry]
+name = "finsight-alpha-lite-backend"
+version = "0.1.0"
+package-mode = false
+description = "FinSight Alpha-Lite Backend: RLlib PPO, FastAPI, LangChain, Chroma, yfinance, DistilBERT sentiment, etc."
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+ray = { version = "^2.20.0", extras = ["rllib"] }
+torch = "^2.2.0"
+transformers = "^4.40.0"
+langchain = "^0.1.16"
+chromadb = "^0.4.24"
+yfinance = "^0.2.38"
+pandas = "^2.2.2"
+pydantic = "^2.7.1"
+python-dotenv = "^1.0.1"
+sqlmodel = "^0.0.16"
+gymnasium = "0.28.1"
+feedparser = "^6.0.11"
+sentence-transformers = "^4.1.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api" 

@@ -1,0 +1,36 @@
+# infra/docker-compose.yml
+version: '3.8'
+services:
+  api:
+    build: ../backend
+    container_name: finsight-api
+    env_file:
+      - ../.env
+    volumes:
+      - ../backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - chromadb
+  frontend:
+    build: ../frontend
+    container_name: finsight-frontend
+    volumes:
+      - ../frontend:/app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: finsight-chromadb
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/chroma
+      - CHROMA_DB_IMPL=sqlite
+    volumes:
+      - chroma_data:/chroma/chroma
+    ports:
+      - "8001:8000"
+volumes:
+  chroma_data: 
